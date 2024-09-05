@@ -1,0 +1,1 @@
+bash "docker build Dockerfiles/ -f Dockerfiles/sparrow.alpine -t melezhik/sparrow:debian_arm";
