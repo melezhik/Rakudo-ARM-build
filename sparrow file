@@ -1,1 +1,10 @@
-bash "docker build {$*CWD}/files  -f {$*CWD}/files/sparrow.debian.arm -t melezhik/sparrow:debian_arm";
+directory "scm";
+
+git-scm tags()<SCM_URL>, %(
+  to => "scm",
+  branch => tags<SCM_BRANCH>
+);
+
+bash "docker build Dockerfiles  -f Dockerfiles/sparrow.debian.arm -t melezhik/sparrow:debian_arm", %(
+  cwd => "{$*CWD}/scm"
+);
