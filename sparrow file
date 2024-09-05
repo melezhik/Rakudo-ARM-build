@@ -1,1 +1,1 @@
-bash "docker build Dockerfiles/ -f Dockerfiles/sparrow.alpine -t melezhik/sparrow:debian_arm";
+bash "docker build {$*CWD}/files  -f {$*CWD}/files/sparrow.debian.arm -t melezhik/sparrow:debian_arm";
